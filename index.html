@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja de Roupas</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+  <div class="topo-conteudo">
+
+    <div class="logo-area">
+  <img src="imagens/logo.png" alt="Logo LSN" class="logo-img">
+  <img src="imagens/mascote-lsm.png" alt="Mario" class="mario-img">
+
+  <p>MELHOR BRECHÓ DE SP</p>
+</div>
+
+    <div class="carrinho" onclick="abrirCarrinho()">
+      🛒 <span id="contador">0</span>
+
+    </div>
+
+    <nav class="menu">
+      <a href="#" onclick="mostrarTodos()">
+        <i class="fa-solid fa-border-all"></i> Todos
+      </a>
+
+      <a href="#" onclick="filtrar('camisas')">
+        <i class="fa-solid fa-shirt"></i> Camisas
+      </a>
+
+      <a href="#" onclick="filtrar('calcas')">
+        <i class="fa-solid fa-shirt"></i> Calças
+      </a>
+
+      <a href="#" onclick="filtrar('Blusas')">
+        <i class="fa-solid fa-shirt"></i> Blusas
+      </a>
+    </nav>
+
+    <div class="pesquisa">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        id="pesquisa"
+        placeholder="Pesquisar produto..."
+        onkeyup="pesquisarProduto()"
+      >
+      <span class="limpar" onclick="limparPesquisa()">×</span>
+    </div>
+
+  </div>
+</header>
+
+<main class="produtos">
+  <section class="categoria">
+<h2>Camisas</h2>
+
+    <div class="lista-produtos">
+
+<div class="produto camisas">
+  <img src="imagens/camisa-flamengo.jpg" alt="Camisa Flamengo M">
+
+  <h3>Camisa Flamengo M</h3>
+  <p>R$ 19,90</p>
+
+  <div class="quantidade" data-estoque="1">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ peça única</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Camisa Flamengo M', 19.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+<div class="produto camisas">
+  <img src="imagens/camisa-branca-boston.jpg" alt="Camisa Boston Branca">
+
+  <h3>Camisa Boston Branca M</h3>
+  <p>R$ 19,90</p>
+
+  <div class="quantidade" data-estoque="1">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ peça única</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Camisa Boston Branca M', 19.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+<div class="produto camisas">
+  <img src="imagens/camisa-adidas-azul-original.jpg" alt="Camisa Adidas Azul Original">
+
+  <h3>Camisa Adidas Azul M</h3>
+  <p>R$ 49,90</p>
+
+  <div class="quantidade" data-estoque="1">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ peça única</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Camisa Adidas Azul M', 49.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+<div class="produto camisas">
+  <img src="imagens/camisa-listrada.png" alt="Camisa Listrada">
+
+  <h3>Camisa Listrada M</h3>
+  <p>R$ 24,90</p>
+
+  <div class="quantidade" data-estoque="1">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ peça única</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Camisa Listrada M', 24.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+    </div>
+
+  </section>
+
+ <section class="categoria">
+  <h2>Calças</h2>
+
+  <div class="lista-produtos">
+
+<div class="produto calcas">
+  <img src="imagens/calca-jeans-bege.jpg" alt="Calça Jeans Bege">
+
+  <h3>Calça Jeans Bege Staroup</h3>
+  <p>R$ 49,90</p>
+
+  <div class="quantidade" data-estoque="2">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ poucas unidades</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Calça Jeans Bege', 49.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+<div class="produto calcas">
+  <img src="imagens/calca-jeans.jpg" alt="Calça Jeans 46">
+
+  <h3>Calça Jeans</h3>
+  <p>R$ 32,90</p>
+
+  <div class="quantidade" data-estoque="1">
+    <button onclick="alterarQtd(this, -1)">−</button>
+    <span class="qtd">1</span>
+    <button onclick="alterarQtd(this, 1)">+</button>
+  </div>
+
+  <p class="estoque-baixo">⚠️ peça única</p>
+
+  <button onclick="adicionarComQuantidade(this, 'Calça Jeans 46', 32.90)">
+    Adicionar ao carrinho
+  </button>
+</div>
+
+  </div>
+</section>
+
+ <section class="categoria">
+  <h2>Blusas</h2>
+
+  <div class="lista-produtos">
+
+    <div class="produto Blusas">
+      <img src="imagens/blusa-vermelha-ferrari.png" alt="Blusa Vermelha Ferrari">
+      <h3>Blusa Vermelha Ferrari</h3>
+      <p>R$ 49,90</p>
+
+      <div class="quantidade" data-estoque="1">
+        <button onclick="alterarQtd(this, -1)">−</button>
+        <span class="qtd">1</span>
+        <button onclick="alterarQtd(this, 1)">+</button>
+      </div>
+
+      <p class="estoque-baixo">⚠️ peça única</p>
+
+      <button onclick="adicionarComQuantidade(this, 'Blusa Vermelha Ferrari', 49.90)">
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+    <div class="produto Blusas">
+      <img src="imagens/blusa-preta-adidas.png" alt="Blusa Preta Adidas">
+      <h3>Blusa Preta Adidas</h3>
+      <p>R$ 29,90</p>
+
+      <div class="quantidade" data-estoque="1">
+        <button onclick="alterarQtd(this, -1)">−</button>
+        <span class="qtd">1</span>
+        <button onclick="alterarQtd(this, 1)">+</button>
+      </div>
+
+      <p class="estoque-baixo">⚠️ peça única</p>
+
+      <button onclick="adicionarComQuantidade(this, 'Blusa Preta Adidas', 29.90)">
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+    <div class="produto Blusas">
+      <img src="imagens/blusa-azul.png" alt="Blusa Azul">
+      <h3>Blusa Azul C&A</h3>
+      <p>R$ 24,90</p>
+
+      <div class="quantidade" data-estoque="1">
+        <button onclick="alterarQtd(this, -1)">−</button>
+        <span class="qtd">1</span>
+        <button onclick="alterarQtd(this, 1)">+</button>
+      </div>
+
+      <p class="estoque-baixo">⚠️ peça única</p>
+
+      <button onclick="adicionarComQuantidade(this, 'Blusa Azul C&A', 24.90)">
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+  </div>
+</section>
+
+</main>
+<section class="sobre-loja">
+  <h2>Sobre a Loja</h2>
+  <p>
+    Somos um brechó focado em roupas de qualidade, com peças únicas,
+    preços justos e envio rápido. Nosso objetivo é oferecer estilo
+    e conforto para todos.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 - Loja oficial</p>
+
+  <p class="descricao-loja">
+    Brechó especializado em roupas selecionadas, peças únicas,
+    Qualidade e Estilo.
+  </p>
+   <p>💬 Atendimento rápido pelo WhatsApp</p>
+  <p>🔒 Compra segura</p>
+   <div class="redes">
+    <a href="https://instagram.com/opa_luisin" target="_blank" class="insta">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/5511954772893" target="_blank" class="whats">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+</footer>
+
+
+<script>
+
+function filtrar(categoria) {
+  document.querySelectorAll('.produto').forEach(produto => {
+    produto.style.display =
+      produto.classList.contains(categoria) ? 'block' : 'none';
+  });
+}
+
+function mostrarTodos() {
+  document.querySelectorAll('.produto').forEach(produto => {
+    produto.style.display = 'block';
+  });
+}
+
+function pesquisarProduto() {
+  const termo = document.getElementById("pesquisa").value.toLowerCase();
+  const produtos = document.querySelectorAll(".produto");
+  const limpar = document.querySelector(".limpar");
+
+  limpar.style.display = termo ? "block" : "none";
+
+  produtos.forEach(produto => {
+    const titulo = produto.querySelector("h3");
+    const nome = titulo ? titulo.innerText.toLowerCase() : "";
+
+    produto.style.display = nome.includes(termo) ? "block" : "none";
+  });
+}
+
+function limparPesquisa() {
+  document.getElementById("pesquisa").value = "";
+  document.querySelector(".limpar").style.display = "none";
+  mostrarTodos();
+}
+</script>
+
+<div class="painel-carrinho" id="painelCarrinho">
+  <h3>Seu carrinho</h3>
+
+  <ul id="listaCarrinho"></ul>
+
+  <p class="total">
+    Total: R$ <span id="total">0.00</span>
+  </p>
+
+  <button type="button" onclick="finalizarCompra()" class="finalizar">
+    Finalizar compra
+  </button>
+
+  <button type="button" onclick="limparCarrinho()" class="limpar">
+    Apagar compras
+  </button>
+
+  <button type="button" onclick="fecharCarrinho()">Fechar</button>
+
+  <div id="slot-game">
+    <h3>🎰 Jogo da Sorte</h3>
+
+    <div class="slots">
+      <div class="slot" id="slot1">🎮</div>
+      <div class="slot" id="slot2">🎮</div>
+      <div class="slot" id="slot3">🎮</div>
+    </div>
+
+  <button onclick="girarSlots()">Girar</button>
+
+  <p id="resultado"></p>
+</div>
+
+</div>
+<script>
+let carrinho = [];
+let total = 0;
+
+const painel = document.getElementById("painelCarrinho");
+const lista = document.getElementById("listaCarrinho");
+const totalEl = document.getElementById("total");
+const contador = document.getElementById("contador");
+
+document.querySelector(".carrinho").addEventListener("click", () => {
+  painel.classList.add("ativo");
+});
+
+function fecharCarrinho() {
+  painel.classList.remove("ativo");
+}
+
+function finalizarCompra() {
+  if (carrinho.length === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  let mensagem = "🛍️ *Pedido da loja*%0A%0A";
+
+  carrinho.forEach(item => {
+    mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
+  });
+
+  mensagem += `%0A💰 *Total:* R$ ${total.toFixed(2)}`;
+
+  const telefone = "5511954772893"; 
+  const url = `https://wa.me/${telefone}?text=${mensagem}`;
+
+  window.open(url, "_blank");
+
+  carrinho = [];
+  atualizarCarrinho();
+  fecharCarrinho();
+}
+
+function adicionarCarrinho(nome, preco) {
+  carrinho.push({ nome, preco });
+  atualizarCarrinho();
+}
+
+function removerItem(index) {
+  carrinho.splice(index, 1);
+  atualizarCarrinho();
+}
+
+function limparCarrinho() {
+  carrinho = [];
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  lista.innerHTML = "";
+  total = 0;
+
+  carrinho.forEach((item, index) => {
+    total += item.preco;
+    lista.innerHTML += `
+      <li>
+        ${item.nome} - R$ ${item.preco.toFixed(2)}
+        <button type="button" onclick="removerItem(${index})">❌</button>
+      </li>
+    `;
+  });
+
+  totalEl.innerText = total.toFixed(2);
+  contador.innerText = carrinho.length;
+}
+</script>
+
+<script>
+const simbolos = ["🎮", "👕", "👖", "🧢", "🎧"];
+
+function girarSlots() {
+  const s1 = simbolos[Math.floor(Math.random() * simbolos.length)];
+  const s2 = simbolos[Math.floor(Math.random() * simbolos.length)];
+  const s3 = simbolos[Math.floor(Math.random() * simbolos.length)];
+
+  document.getElementById("slot1").textContent = s1;
+  document.getElementById("slot2").textContent = s2;
+  document.getElementById("slot3").textContent = s3;
+
+  const resultado = document.getElementById("resultado");
+
+  if (s1 === s2 && s2 === s3) {
+    resultado.textContent = "🎉 Você venceu!";
+    resultado.style.color = "lime";
+  } else {
+    resultado.textContent = "❌ Tente novamente";
+    resultado.style.color = "red";
+  }
+}
+</script>
+<script>
+
+function alterarQtd(botao, valor) {
+  const container = botao.parentElement;
+  const qtdSpan = container.querySelector(".qtd");
+  const estoque = parseInt(container.dataset.estoque);
+
+  let qtdAtual = parseInt(qtdSpan.innerText);
+  let novaQtd = qtdAtual + valor;
+
+  if (novaQtd < 1) return;
+  if (novaQtd > estoque) {
+    alert("Quantidade máxima em estoque atingida");
+    return;
+  }
+
+  qtdSpan.innerText = novaQtd;
+}
+
+function adicionarComQuantidade(botao, nome, preco) {
+  const produto = botao.parentElement;
+  const qtd = parseInt(produto.querySelector(".qtd").innerText);
+
+  for (let i = 0; i < qtd; i++) {
+    carrinho.push({ nome, preco });
+  }
+
+  atualizarCarrinho();
+
+  totalItens += qtd;
+  document.getElementById("contador").innerText = totalItens;
+
+  totalValor += preco * qtd;
+  document.getElementById("total").innerText =
+    totalValor.toFixed(2).replace(".", ",");
+
+  alert(`${qtd}x ${nome} adicionado(s) ao carrinho`);
+  
+}
+</script>
+
+</body>
+</html>
