@@ -26,8 +26,6 @@ header p {
   font-size: 14px;
 }
 
-/* PRODUTOS */
-/* Cada categoria uma embaixo da outra */
 .lista-produtos {
   display: flex;
   gap: 40px;
@@ -41,8 +39,8 @@ header p {
 
 .lista-produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 .produto {
@@ -169,7 +167,9 @@ html {
 
 .menu {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
 .menu a {
@@ -511,4 +511,30 @@ button:disabled {
   .mascote-lsm {
     height: 45px;
   }
+}
+@media (max-width: 768px) {
+
+  .lista-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .produto img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .menu a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+}
+  .mascote-lsm {
+    height: 45px;
+  }
+
 }
