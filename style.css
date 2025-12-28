@@ -322,7 +322,6 @@ footer {
   background: #25D366;
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .topo-conteudo {
     flex-direction: column;
@@ -337,6 +336,24 @@ footer {
     width: 100%;
   }
 
+  .lista-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .produto img {
+    max-height: 180px;
+  }
+
+  .produto h3 {
+    font-size: 14px;
+  }
+
+  .produto p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
   .lista-produtos {
     grid-template-columns: 1fr;
   }
