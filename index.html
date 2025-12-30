@@ -129,7 +129,7 @@
   <img src="imagens/camisa-listrada.png" alt="Camisa Listrada">
 
   <h3>Camisa Listrada M</h3>
-  <p>R$ 24,90</p>
+  <p>R$ 14,90</p>
 
   <div class="quantidade" data-estoque="1">
     <button onclick="alterarQtd(this, -1)">−</button>
@@ -139,7 +139,7 @@
 
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Camisa Listrada M', 24.90)">
+  <button onclick="adicionarComQuantidade(this, 'Camisa Listrada M', 14.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -361,6 +361,7 @@ const painel = document.getElementById("painelCarrinho");
 const lista = document.getElementById("listaCarrinho");
 const totalEl = document.getElementById("total");
 const contador = document.getElementById("contador");
+const iconeCarrinho = document.querySelector(".carrinho");
 
 document.querySelector(".carrinho").addEventListener("click", () => {
   painel.classList.add("ativo");
@@ -480,22 +481,27 @@ function adicionarComQuantidade(botao, nome, preco) {
 
   atualizarCarrinho();
 
-  totalItens += qtd;
-  document.getElementById("contador").innerText = totalItens;
+  // 🔥 ANIMA O CARRINHO
+  iconeCarrinho.classList.add("animar");
 
-  totalValor += preco * qtd;
-  document.getElementById("total").innerText =
-    totalValor.toFixed(2).replace(".", ",");
+  setTimeout(() => {
+    iconeCarrinho.classList.remove("animar");
+  }, 500);
 
-  alert(`${qtd}x ${nome} adicionado(s) ao carrinho`);
-  
+  botao.innerText = "✔ Adicionado";
+  botao.style.background = "#2ecc71";
+  botao.disabled = true;
+
+  setTimeout(() => {
+    botao.innerText = "Adicionar ao carrinho";
+    botao.style.background = "";
+    botao.disabled = false;
+  }, 1200);
 }
 </script>
 
 </body>
 </html>
 
-</body>
-</html>
 
 
