@@ -42,7 +42,7 @@
         <i class="fa-solid fa-shirt"></i> Calças
       </a>
 
-      <a href="#" onclick="filtrar('Blusas')">
+      <a href="#" onclick="filtrar('blusas')">
         <i class="fa-solid fa-shirt"></i> Blusas
       </a>
     </nav>
@@ -73,17 +73,14 @@
   <h3>Camisa Flamengo M</h3>
   <p>R$ 19,90</p>
 
-  <div class="quantidade" data-estoque="1">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
-
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Camisa Flamengo M', 19.90)">
-    Adicionar ao carrinho
-  </button>
+  <button
+  data-produto="Camisa Flamengo M"
+  onclick="adicionarCarrinhoUnico(this, 'Camisa Flamengo M', 19.90)">
+  Adicionar ao carrinho
+</button>
+
 </div>
 
 <div class="produto camisas">
@@ -92,15 +89,11 @@
   <h3>Camisa Boston Branca M</h3>
   <p>R$ 19,90</p>
 
-  <div class="quantidade" data-estoque="1">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
-
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Camisa Boston Branca M', 19.90)">
+  <button
+  data-produto="camisa-branca-boston"
+  onclick="adicionarCarrinhoUnico(this, 'Camisa Boston Branca M', 19.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -109,17 +102,13 @@
   <img src="imagens/camisa-adidas-azul-original.jpg" alt="Camisa Adidas Azul Original">
 
   <h3>Camisa Adidas Azul M</h3>
-  <p>R$ 49,90</p>
-
-  <div class="quantidade" data-estoque="1">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
+  <p>R$ 39,90</p>
 
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Camisa Adidas Azul M', 49.90)">
+  <button
+  data-produto="camisa-adidas-azul-original"
+  onclick="adicionarCarrinhoUnico(this, 'Camisa Adidas Azul M', 39.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -130,15 +119,11 @@
   <h3>Camisa Listrada M</h3>
   <p>R$ 14,90</p>
 
-  <div class="quantidade" data-estoque="1">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
-
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Camisa Listrada M', 14.90)">
+  <button
+  data-produto="Camisa Listrada M"
+  onclick="adicionarCarrinhoUnico(this, 'Camisa Listrada M', 14.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -156,17 +141,13 @@
   <img src="imagens/calca-jeans-bege.jpg" alt="Calça Jeans Bege">
 
   <h3>Calça Jeans Bege Staroup</h3>
-  <p>R$ 49,90</p>
-
-  <div class="quantidade" data-estoque="2">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
+  <p>R$ 34,90</p>
 
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Calça Jeans Bege', 49.90)">
+  <button
+  data-produto="calca-jeans-bege"
+  onclick="adicionarCarrinhoUnico(this, 'Calça Jeans Bege', 34.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -177,15 +158,11 @@
   <h3>Calça Jeans</h3>
   <p>R$ 32,90</p>
 
-  <div class="quantidade" data-estoque="1">
-    <button onclick="alterarQtd(this, -1)">−</button>
-    <span class="qtd">1</span>
-    <button onclick="alterarQtd(this, 1)">+</button>
-  </div>
-
   <p class="estoque-baixo">⚠️ peça única</p>
 
-  <button onclick="adicionarComQuantidade(this, 'Calça Jeans 46', 32.90)">
+  <button
+  data-produto="calca-jeans 46"
+  onclick="adicionarCarrinhoUnico(this, 'Calça Jeans 46', 32.90)">
     Adicionar ao carrinho
   </button>
 </div>
@@ -198,56 +175,44 @@
 
   <div class="lista-produtos">
 
-    <div class="produto Blusas">
+    <div class="produto blusas">
       <img src="imagens/blusa-vermelha-ferrari.png" alt="Blusa Vermelha Ferrari">
       <h3>Blusa Vermelha Ferrari</h3>
-      <p>R$ 49,90</p>
-
-      <div class="quantidade" data-estoque="1">
-        <button onclick="alterarQtd(this, -1)">−</button>
-        <span class="qtd">1</span>
-        <button onclick="alterarQtd(this, 1)">+</button>
-      </div>
+      <p>R$ 34,90</p>
 
       <p class="estoque-baixo">⚠️ peça única</p>
 
-      <button onclick="adicionarComQuantidade(this, 'Blusa Vermelha Ferrari', 49.90)">
+      <button
+      data-produto="blusa-vermelha-ferrari"
+      onclick="adicionarCarrinhoUnico(this, 'Blusa Vermelha Ferrari', 34.90)">
         Adicionar ao carrinho
       </button>
     </div>
 
-    <div class="produto Blusas">
+    <div class="produto blusas">
       <img src="imagens/blusa-preta-adidas.png" alt="Blusa Preta Adidas">
       <h3>Blusa Preta Adidas</h3>
-      <p>R$ 29,90</p>
-
-      <div class="quantidade" data-estoque="1">
-        <button onclick="alterarQtd(this, -1)">−</button>
-        <span class="qtd">1</span>
-        <button onclick="alterarQtd(this, 1)">+</button>
-      </div>
+      <p>R$ 19,90</p>
 
       <p class="estoque-baixo">⚠️ peça única</p>
 
-      <button onclick="adicionarComQuantidade(this, 'Blusa Preta Adidas', 29.90)">
+      <button
+      data-produto="blusa-preta-adidas"
+      onclick="adicionarCarrinhoUnico(this, 'Blusa Preta Adidas', 19.90)">
         Adicionar ao carrinho
       </button>
     </div>
 
-    <div class="produto Blusas">
+    <div class="produto blusas">
       <img src="imagens/blusa-azul.png" alt="Blusa Azul">
       <h3>Blusa Azul C&A</h3>
-      <p>R$ 24,90</p>
-
-      <div class="quantidade" data-estoque="1">
-        <button onclick="alterarQtd(this, -1)">−</button>
-        <span class="qtd">1</span>
-        <button onclick="alterarQtd(this, 1)">+</button>
-      </div>
+      <p>R$ 19,90</p>
 
       <p class="estoque-baixo">⚠️ peça única</p>
 
-      <button onclick="adicionarComQuantidade(this, 'Blusa Azul C&A', 24.90)">
+      <button
+      data-produto="blusa-azul"
+      onclick="adicionarCarrinhoUnico(this, 'Blusa Azul C&A', 19.90)">
         Adicionar ao carrinho
       </button>
     </div>
@@ -262,11 +227,14 @@
 <footer>
   <p>© 2026 - Loja oficial</p>
 
-  <p class="descricao-loja">
-      <h2>Sobre a Loja</h2>
+  <div class="descricao-loja">
+  <h2>Sobre a Loja</h2>
+  <p>
     Brechó especializado em roupas selecionadas, peças únicas,
     Qualidade e Estilo.
   </p>
+</div>
+
    <p>💬 Atendimento rápido pelo WhatsApp</p>
   <p>🔒 Compra segura</p>
    <div class="redes">
@@ -400,13 +368,31 @@ function adicionarCarrinho(nome, preco) {
 }
 
 function removerItem(index) {
+  const itemRemovido = carrinho[index];
+
   carrinho.splice(index, 1);
   atualizarCarrinho();
+
+  const botao = document.querySelector(
+    `button[data-produto="${itemRemovido.nome}"]`
+  );
+
+  if (botao) {
+    botao.innerText = "Adicionar ao carrinho";
+    botao.style.background = "";
+    botao.disabled = false;
+  }
 }
 
 function limparCarrinho() {
   carrinho = [];
   atualizarCarrinho();
+
+  document.querySelectorAll("button[data-produto]").forEach(botao => {
+    botao.innerText = "Adicionar ao carrinho";
+    botao.style.background = "";
+    botao.disabled = false;
+  });
 }
 
 function atualizarCarrinho() {
@@ -452,53 +438,29 @@ function girarSlots() {
 }
 </script>
 <script>
+  
+function adicionarCarrinhoUnico(botao, nome, preco) {
+  const jaExiste = carrinho.find(item => item.nome === nome);
 
-function alterarQtd(botao, valor) {
-  const container = botao.parentElement;
-  const qtdSpan = container.querySelector(".qtd");
-  const estoque = parseInt(container.dataset.estoque);
-
-  let qtdAtual = parseInt(qtdSpan.innerText);
-  let novaQtd = qtdAtual + valor;
-
-  if (novaQtd < 1) return;
-  if (novaQtd > estoque) {
-    alert("Quantidade máxima em estoque atingida");
+  if (jaExiste) {
+    alert("Essa peça é única e já está no carrinho.");
     return;
   }
 
-  qtdSpan.innerText = novaQtd;
-}
-
-function adicionarComQuantidade(botao, nome, preco) {
-  const produto = botao.parentElement;
-  const qtd = parseInt(produto.querySelector(".qtd").innerText);
-
-  for (let i = 0; i < qtd; i++) {
-    carrinho.push({ nome, preco });
-  }
-
+  carrinho.push({ nome, preco });
   atualizarCarrinho();
 
-  // 🔥 ANIMA O CARRINHO
   iconeCarrinho.classList.add("animar");
+  setTimeout(() => iconeCarrinho.classList.remove("animar"), 500);
 
-  setTimeout(() => {
-    iconeCarrinho.classList.remove("animar");
-  }, 500);
-
-  botao.innerText = "✔ Adicionado";
+  botao.innerText = "✔ Peça adicionada";
   botao.style.background = "#2ecc71";
   botao.disabled = true;
-
-  setTimeout(() => {
-    botao.innerText = "Adicionar ao carrinho";
-    botao.style.background = "";
-    botao.disabled = false;
-  }, 1200);
 }
+
 </script>
 
 </body>
 </html>
+
 
