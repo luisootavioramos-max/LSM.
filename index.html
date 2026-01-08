@@ -138,21 +138,6 @@
   <div class="lista-produtos">
 
 <div class="produto calcas">
-  <img src="imagens/calca-jeans-bege.jpg" alt="Calça Jeans Bege">
-
-  <h3>Calça Jeans Bege Staroup</h3>
-  <p>R$ 34,90</p>
-
-  <p class="estoque-baixo">⚠️ peça única</p>
-
-  <button
-  data-produto="calca-jeans-bege"
-  onclick="adicionarCarrinhoUnico(this, 'Calça Jeans Bege', 34.90)">
-    Adicionar ao carrinho
-  </button>
-</div>
-
-<div class="produto calcas">
   <img src="imagens/calca-jeans.jpg" alt="Calça Jeans 46">
 
   <h3>Calça Jeans</h3>
@@ -368,20 +353,23 @@ function adicionarCarrinho(nome, preco) {
 }
 
 function removerItem(index) {
-  const itemRemovido = carrinho[index];
+  const itemRemovido = carrinho[index].nome;
 
   carrinho.splice(index, 1);
   atualizarCarrinho();
 
-  const botao = document.querySelector(
-    `button[data-produto="${itemRemovido.nome}"]`
-  );
+  // 🔁 Resetar botão do produto removido
+  document.querySelectorAll(".produto").forEach(produto => {
+    const nome = produto.querySelector("h3")?.innerText;
+    const botao = produto.querySelector("button");
 
-  if (botao) {
-    botao.innerText = "Adicionar ao carrinho";
-    botao.style.background = "";
-    botao.disabled = false;
-  }
+    if (nome === itemRemovido && botao) {
+      botao.innerText = "Adicionar ao carrinho";
+      botao.style.background = "";
+      botao.style.width = "auto";
+      botao.disabled = false;
+    }
+  });
 }
 
 function limparCarrinho() {
@@ -462,3 +450,4 @@ function adicionarCarrinhoUnico(botao, nome, preco) {
 
 </body>
 </html>
+
